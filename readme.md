@@ -54,6 +54,8 @@ For this to work:
 
 7) Once complete you should be able to navigate to a designated amp page with ```?amp=1``` appended to the url and start validaiting your markup.
 
+> **note** for amp-youtube to work you'll need to create a Page/YouTube subtype and put the ```/page_youtube/``` folder into the ```content_types``` directory. 
+
 #Resources
 - https://www.ampproject.org/
 - https://validator.ampproject.org/
