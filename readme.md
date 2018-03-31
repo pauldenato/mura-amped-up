@@ -21,35 +21,35 @@ For this to work:
 > *Replace blog and news with the sections of the site you wish to expose to AMP*
 
 ```
-	<!--- MURA AMP --->
-	<cfif len($.content().getFileName())>
-		<cfif listFindNoCase('Blog,News', $.content().getParent().getTitle()) >
-			<link rel="amphtml" href="#$.content().getURL(complete='true')#?amp=1" />
-		</cfif>
+<!--- MURA AMP --->
+<cfif len($.content().getFileName())>
+	<cfif listFindNoCase('Blog,News', $.content().getParent().getTitle()) >
+		<link rel="amphtml" href="#$.content().getURL(complete='true')#?amp=1" />
 	</cfif>
+</cfif>
 ```
 
 5) In the `navbar.cfm` wrap the standard cfml in the folowing ```<cfif>```
 
 ```
 <cfif request.returnFormat NEQ 'AMP'>
-<!--- Standard Mura Navbar Code --->
+	<!--- Standard Mura Navbar Code --->
 	<cfelse>
 	<!--- Include AMP Header --->
 	<div class="logo">
 		<a href="#$.createHREF(filename=$.content('filename'))#">
 			<amp-img src="#$.siteConfig('themeAssetPath')#/images/{-- your logo --}" height="50" width="150" alt="Mura AMP'd Up"></a>
-		</div>
-	</cfif>
+	</div>
+</cfif>
 ```
 
 6) Lastly wrap the code in the templates you are using for the sections identified above in the folowing ```<cfif>```
 ```
-	<cfif request.returnFormat NEQ 'AMP'>
+<cfif request.returnFormat NEQ 'AMP'>
 	<!--- Your template code.  In my case the two_column_SR and the three_column --->
-	<cfelse>
-		<cfinclude template = "amp_inc/page_amp.cfm">
-	</cfif>
+<cfelse>
+	<cfinclude template = "amp_inc/page_amp.cfm">
+</cfif>
 ```
 
 7) Once complete you should be able to navigate to a designated amp page with ```?amp=1``` appended to the url and start validaiting your markup.
