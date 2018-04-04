@@ -56,7 +56,7 @@ For this to work:
 
 > **note** for amp-youtube to work you'll need to create a Page/YouTube subtype and put the ```/page_youtube/``` folder into the ```content_types``` directory.
 
-#Resources
+# Resources
 - https://www.ampproject.org/
 - https://validator.ampproject.org/
 - https://ampbyexample.com/playground/
