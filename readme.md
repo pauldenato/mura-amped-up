@@ -4,7 +4,7 @@ This is just an example of how to start making your site AMP Compatible.
 
 For this to work:
 
-1) You must be on Mura 7.1.137 or greater
+1) You must be on Mura 7.1.184 or greater
 
 2) Add this to your theme eventhandler.cfc in the onRenderStart();
 
